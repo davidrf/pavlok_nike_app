@@ -1,5 +1,5 @@
 class Activity
-  ACCESS_TOKEN ="QHuOkULLbTtply8RYc8LtbIeeXFH"
+  ACCESS_TOKEN ="f917SrLNMb2GpJ8mWwMSyKnkHT7a"
   BASE_URL = "https://api.nike.com/v1/me/sport"
   IMPORTANT_NUMBER = "1431792350948"
   OPTIONS = { headers: { 'Accept' => 'application/json' } }
