@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :training_plans, only: [:index, :new, :create, :update]
+    resources :training_plans, only: [:index, :new, :create, :edit, :update]
   end
 end
