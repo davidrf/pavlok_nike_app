@@ -1,7 +1,7 @@
 <div class="row">
   <ul>
     <% @all_plans.each do |plan| %>
-      <li><%= link_to plan.plan_name, '/users/1/training_plans/1', method: :put %><li>
+      <li><%= link_to plan.plan_name, "/users/#{@user.id}/training_plans/#{plan.id}", method: :put %><li>
     <% end %>
   </ul>
 </div>
