@@ -38,6 +38,10 @@ class TrainingPlansController < ApplicationController
     end
   end
 
+  def update
+    binding.pry
+  end
+
 
   private
 

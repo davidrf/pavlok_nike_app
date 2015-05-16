@@ -1,4 +1,12 @@
 <div class="row">
+  <ul>
+    <% @all_plans.each do |plan| %>
+      <li><%= link_to plan.plan_name, user_training_plan_path(current_user, plan), method: :patch %><li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="row">
   <h1>Dodie</h1>
     <%= form_for [@user, @training_plan] do |f| %>
       <%= f.label :plan_name %><br>
