@@ -1,0 +1,15 @@
+<div class="row">
+  <h1>Dodie</h1>
+    <%= form_for [@user, @training_plan] do |f| %>
+      <%= f.label :plan_name %><br>
+      <%= f.text_field :plan_name %>
+
+      <%= f.label :start_time %><br>
+      <%= f.select :start_time, @times %>
+
+      <%= f.label :end_time %><br>
+      <%= f.select :end_time, @times %>
+
+      <%= f.submit %>
+    <% end %>
+</div>
