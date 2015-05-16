@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 20150516181309) do
     t.integer "duration"
   end
 
+  create_table "trackers", force: :cascade do |t|
+    t.integer  "strike",                         null: false
+    t.integer  "shock_level",      default: 150
+    t.integer  "training_plan_id",               null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "training_plans", force: :cascade do |t|
+    t.string   "plan_name",                     null: false
+    t.float    "speed"
+    t.integer  "user_id",                       null: false
+    t.datetime "start_time",                    null: false
+    t.datetime "end_time",                      null: false
+    t.boolean  "run_completed", default: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -36,6 +53,8 @@ ActiveRecord::Schema.define(version: 20150516181309) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
