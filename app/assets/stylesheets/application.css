@@ -10,8 +10,44 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
-
  */
+
+#plans-list-container {
+  margin-bottom: 2em;
+}
+
+#plans-list {
+  list-style: none;
+  margin-top: 1em;
+}
+
+#plans-list li {
+  border-left: 3px solid transparent;
+  padding-left: 0.5em;
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
+  box-shadow: 0px 2px 5px -1px #333;
+  margin-bottom: 1em;
+}
+
+#plans-list li a{
+  color: #000;
+}
+
+#plans-list li:hover{
+  color: #f90;
+  border-left: 3px solid #f90;
+  box-shadow: inset 0px 2px 5px -1px #444;
+}
+
+#new-plan {
+  box-shadow: 0px 5px 5px -1px #999;
+  margin-bottom: 2em;
+}
+
+.running {
+  background-color: rgba(100, 100, 100, 0.5);
+}
