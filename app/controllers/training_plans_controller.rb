@@ -30,6 +30,7 @@ class TrainingPlansController < ApplicationController
     @user = current_user
     @training_plan = @user.training_plans.new(training_plans_params)
     if @training_plan.save
+      @training_plan.tracker.new(strike: 0).save
       flash[:notice] = "New Plan Saved"
       redirect_to user_training_plans_path
     else

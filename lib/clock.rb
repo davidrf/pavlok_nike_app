@@ -4,4 +4,4 @@ require 'clockwork'
 
 include Clockwork
 
-every(10.seconds, 'weather.input_degree') { TrainingPlans. }
+every(10.seconds, 'weather.input_degree') { TrainingPlan.check_commitments }
