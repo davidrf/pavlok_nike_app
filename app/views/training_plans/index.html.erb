@@ -1,13 +1,20 @@
-<div class="row">
-  <ul>
+<h1>Dodie Worout Plans</h1>
+<div id="plans-list-container" class="row">
+  <ul id="plans-list">
     <% @all_plans.each do |plan| %>
-      <li><%= link_to plan.plan_name, "/users/#{@user.id}/training_plans/#{plan.id}", method: :put %><li>
+    <% if plan.run_completed %>
+      <li class="running">
+    <% else %>
+      <li>
+    <% end %>
+          <%= link_to plan.plan_name, "/users/#{@user.id}/training_plans/#{plan.id}", method: :put %>
+      <li>
     <% end %>
   </ul>
 </div>
 
-<div class="row">
-  <h1>Dodie</h1>
+<fieldset id="new-plan" class="row">
+  <legend>New Plan</legend>
     <%= form_for [@user, @training_plan] do |f| %>
       <%= f.label :plan_name %><br>
       <%= f.text_field :plan_name %>
@@ -20,4 +27,4 @@
 
       <%= f.submit %>
     <% end %>
-</div>
+</fieldset>
