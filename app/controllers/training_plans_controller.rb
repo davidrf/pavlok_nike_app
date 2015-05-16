@@ -17,9 +17,9 @@ class TrainingPlansController < ApplicationController
 
     @times.each_with_index do |arr, index|
       @stored_time = @times[1]
-
     end
-    # binding.pry
+
+    @all_plans = @user.training_plans
   end
 
   def new
@@ -29,9 +29,8 @@ class TrainingPlansController < ApplicationController
   def create
     @user = current_user
     @training_plan = @user.training_plans.new(training_plans_params)
-    binding.pry
     if @training_plan.save
-
+      flash[:notice] = "New Plan Saved"
       redirect_to user_training_plans_path
     else
       flash[:errors] = @training_plan.errors
