@@ -50,6 +50,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    clockwork (1.2.0)
+      activesupport
+      tzinfo
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -205,6 +208,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
+  clockwork
   coffee-rails (~> 4.1.0)
   devise
   factory_girl
