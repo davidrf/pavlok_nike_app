@@ -38,8 +38,25 @@ class TrainingPlansController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def update
-    binding.pry
+    @user = current_user
+    @all_plans = @user.training_plans
+
+    plan_id = params[:id]
+    @training_plan = TrainingPlan.find(plan_id)
+
+    @training_plan.update_attributes(run_completed: true)
+
+    if @training_plan.save
+      flash[:notice] = "Good job!"
+    else
+      flash[:errors] = "Hmm.. something went wrong"
+    end
+      redirect_to root_path
   end
 
 
